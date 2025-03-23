@@ -1,0 +1,34 @@
+---
+import cssVars from "../styles/css-vars";
+
+interface Props {
+  // variant?: "primary" | "secondary";
+  secondary?: boolean;
+  children: string;
+}
+
+const { secondary: isSecondary } = Astro.props;
+---
+
+<!-- <button class="btn"> --><!-- <button class:list={(["secondary", { variant: "secondary" }], ["btn"])}> -->
+<button class:list={["btn", { secondary: isSecondary }]}>
+  <slot />
+  <!-- //SLOT, CHILDREN => HTML, JSX, Elementy HTML-like -->
+</button>
+
+<style define:vars={cssVars}>
+  .btn {
+    all: unset;
+    padding: 16px 24px;
+    background-color: var(--colorPeachLight);
+    /* default variant: primary */
+  }
+
+  .secondary {
+    /* Nadpisanie klas podstawowych */
+    background-color: greenyellow;
+  }
+  /* .btn-primary {
+    background-color: var(--colorPeach);
+  } */
+</style>

@@ -1,0 +1,90 @@
+---
+import burgerClosed from "../assets/shared/mobile/icon-close.svg?raw";
+import burgerOpen from "../assets/shared/mobile/icon-hamburger.svg?raw";
+import cssVars from "../styles/css-vars";
+---
+
+<nav>
+  <div class="logo">
+    <img src="./src/assets/shared/desktop/logo-light.png" alt="Designo" />
+  </div>
+  <div class="nav-content">
+    <li><a href="">OUR COMPANY</a></li>
+    <li><a href="">LOCATIONS</a></li>
+    <li><a href="">CONTACT</a></li>
+  </div>
+  <button class="burger" aria-label="Open full-screen navigation">
+    <!-- <img
+      class="open"
+      src="./src/assets/shared/mobile/icon-hamburger.svg"
+      alt="burger"
+    /> -->
+    <div class="bgrOpn">
+      <Fragment set:html={burgerOpen} />
+    </div>
+    <div class="bgrCld">
+      <Fragment set:html={burgerClosed} />
+    </div>
+  </button>
+</nav>
+<script>
+  function attachListeners() {
+    console.log("attachlisteners");
+    document.querySelector(".burger")?.addEventListener("click", (e) => {
+      console.log(e);
+      // e.target?.classList.toggle("open");
+    });
+  }
+
+  // 1. Get refs to elements
+  // 2. Attach listeners
+  // 3. Modify classes
+
+  document.addEventListener("astro:page-load", attachListeners);
+</script>
+
+<style define:vars={cssVars}>
+  nav {
+    display: flex;
+  }
+
+  .nav-content {
+    display: flex;
+  }
+
+  /* Burger */
+  .burger {
+    all: unset;
+  }
+
+  .burger > .bgrCld {
+    display: none;
+  }
+
+  .burger.open > .bgrCld {
+    display: initial;
+  }
+
+  .burger.open > .bgrOpn {
+    display: none;
+  }
+  /* End: Burger */
+
+  /* .burger {
+    all: unset;
+
+    & > .bgrOpn {
+      display: none;
+    }
+    &.open > .bgrOpn {
+      display: initial;
+    }
+    &.open > .bgrCld {
+      display: none;
+    }
+  } */
+
+  /* .open {
+    src: url("./src/assets/shared/mobile/icon-close.svg");
+  } */
+</style>
