@@ -6,19 +6,9 @@ import cssVars from "../styles/css-vars";
 
 <nav>
   <div class="logo">
-    <img src="./src/assets/shared/desktop/logo-light.png" alt="Designo" />
-  </div>
-  <div class="nav-content">
-    <li><a href="">OUR COMPANY</a></li>
-    <li><a href="">LOCATIONS</a></li>
-    <li><a href="">CONTACT</a></li>
+    <img src="./src/assets/shared/desktop/logo-dark.png" alt="Designo" />
   </div>
   <button class="burger" aria-label="Open full-screen navigation">
-    <!-- <img
-      class="open"
-      src="./src/assets/shared/mobile/icon-hamburger.svg"
-      alt="burger"
-    /> -->
     <div class="bgrOpn">
       <Fragment set:html={burgerOpen} />
     </div>
@@ -26,19 +16,33 @@ import cssVars from "../styles/css-vars";
       <Fragment set:html={burgerClosed} />
     </div>
   </button>
+  <div class="nav-content">
+    <a href="#our-company">OUR COMPANY</a>
+    <a href="#locations">LOCATIONS</a>
+    <a href="#contact">CONTACT</a>
+  </div>
+  <!-- <img
+      class="open"
+      src="./src/assets/shared/mobile/icon-hamburger.svg"
+      alt="burger"
+    /> -->
 </nav>
 <script>
   function attachListeners() {
-    console.log("attachlisteners");
-    document.querySelector(".burger")?.addEventListener("click", (e) => {
-      console.log(e);
-      // e.target?.classList.toggle("open");
+    const brg = document.querySelector(".burger");
+    const brgClasses = brg?.classList;
+
+    const nav = document.querySelector(".nav-content");
+    const navClasses = nav?.classList;
+
+    brg?.addEventListener("click", () => {
+      const result = brgClasses?.toggle("open");
+    });
+
+    brg?.addEventListener("click", () => {
+      const result = navClasses?.toggle("open");
     });
   }
-
-  // 1. Get refs to elements
-  // 2. Attach listeners
-  // 3. Modify classes
 
   document.addEventListener("astro:page-load", attachListeners);
 </script>
@@ -46,15 +50,47 @@ import cssVars from "../styles/css-vars";
 <style define:vars={cssVars}>
   nav {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--colorWhite);
+  }
+
+  .logo {
+    padding: 35px 25px 28px 25px;
+  }
+
+  nav div img {
+    width: 202px;
+    height: 24px;
   }
 
   .nav-content {
+    all: unset;
+    display: none;
+  }
+
+  .nav-content.open {
     display: flex;
+    flex-direction: column;
+  }
+
+  .nav-content.open a {
+    display: block;
+    background-color: var(--colorBlack);
+    color: var(--colorWhite);
+    padding: 16px 24px;
+    height: 50px; /* shouldn't be fixed! */
   }
 
   /* Burger */
   .burger {
     all: unset;
+    padding: 15px;
+    position: absolute;
+    right: 0;
+    top: 20px;
   }
 
   .burger > .bgrCld {
