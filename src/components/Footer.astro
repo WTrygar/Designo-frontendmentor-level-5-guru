@@ -107,6 +107,16 @@ import cssVars from "../styles/css-vars";
   @media (min-width: 600px) and (max-width: 900px) {
     .footer-first-line {
       display: flex;
+      justify-content: space-between;
+      width: 90%;
+    }
+
+    footer .logo {
+      margin: 64px 0;
+    }
+
+    footer .logo img {
+      width: 202px;
     }
 
     footer .footer-links {
@@ -116,7 +126,7 @@ import cssVars from "../styles/css-vars";
     }
 
     footer .footer-links a {
-      padding-right: 40px;
+      padding-left: 40px;
       padding-bottom: 0;
     }
 
@@ -138,6 +148,45 @@ import cssVars from "../styles/css-vars";
   }
 
   @media (min-width: 900px) {
-    /*  */
+    .footer-first-line {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+    }
+
+    footer .logo {
+      margin: 64px 0;
+    }
+
+    footer .logo img {
+      width: 202px;
+    }
+
+    footer .footer-links {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer .footer-links a {
+      padding-left: 40px;
+      padding-bottom: 0;
+    }
+
+    .footer-second-line {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      padding-bottom: 80px;
+    }
+
+    footer .footer-icons {
+      margin: 0;
+      align-items: end;
+    }
+
+    footer .footer-text p {
+      margin: 32px auto 0 auto;
+    }
   }
 </style>
