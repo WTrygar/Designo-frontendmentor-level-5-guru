@@ -83,7 +83,7 @@ import cssVars from "../styles/css-vars";
   }
 
   footer .footer-text {
-    line-height: 10px;
+    line-height: 0px;
     padding-bottom: 5px;
   }
 
@@ -99,6 +99,11 @@ import cssVars from "../styles/css-vars";
     align-items: center;
     gap: 16px;
   }
+
+  .footer-icons a {
+    height: 24px;
+  }
+
   @media (min-width: 600px) and (max-width: 900px) {
     .footer-first-line {
       display: flex;
@@ -125,6 +130,10 @@ import cssVars from "../styles/css-vars";
     footer .footer-icons {
       margin: 0;
       align-items: end;
+    }
+
+    footer .footer-text p {
+      margin: 32px auto 0 auto;
     }
   }
 
