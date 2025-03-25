@@ -53,6 +53,7 @@ import cssVars from "../styles/css-vars";
     top: 0;
     width: 100%;
     background-color: var(--colorWhite);
+    /* transition: all 0.3s ease; */
   }
 
   .logo {
@@ -72,6 +73,7 @@ import cssVars from "../styles/css-vars";
   .nav-content.open {
     display: flex;
     flex-direction: column;
+    max-height: 10000px;
   }
 
   .nav-content.open a {
@@ -142,18 +144,6 @@ import cssVars from "../styles/css-vars";
       background-color: var(--colorWhite);
     }
 
-    /* .nav-content.open {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-
-    .nav-content.open a {
-      background-color: var(--colorWhite);
-      color: var(--colorBlack);
-      padding: 0;
-    } */
-
     .burger {
       display: none;
     }
@@ -169,6 +159,30 @@ import cssVars from "../styles/css-vars";
       align-items: center;
       gap: 30px;
       padding-right: 20px;
+      height: auto;
+    }
+
+    .nav-content a {
+      color: var(--colorBlack);
+      text-decoration: none;
+    }
+
+    .nav-content.open {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0;
+      padding-right: 0;
+    }
+
+    .nav-content.open a {
+      display: flex;
+      text-decoration: none;
+      height: auto;
+      padding: 20px 13px;
+      gap: 30px;
+      color: var(--colorBlack);
+      background-color: var(--colorWhite);
     }
 
     .burger {
