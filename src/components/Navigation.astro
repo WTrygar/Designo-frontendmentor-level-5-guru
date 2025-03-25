@@ -43,8 +43,7 @@ import cssVars from "../styles/css-vars";
 </script>
 
 <style define:vars={cssVars}>
-
-/* navBar */
+  /* navBar */
   nav {
     display: flex;
     flex-direction: column;
@@ -79,6 +78,7 @@ import cssVars from "../styles/css-vars";
     display: block;
     background-color: var(--colorBlack);
     color: var(--colorWhite);
+    text-decoration: none;
     padding: 16px 24px;
     height: 50px;
   }
@@ -105,4 +105,74 @@ import cssVars from "../styles/css-vars";
     display: none;
   }
   /* End: Burger */
+
+  @media (min-width: 600px) and (max-width: 900px) {
+    nav {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .nav-content {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      padding-right: 20px;
+      height: auto;
+    }
+
+    .nav-content a {
+      color: var(--colorBlack);
+      text-decoration: none;
+    }
+
+    .nav-content.open {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0;
+      padding-right: 0;
+    }
+
+    .nav-content.open a {
+      display: flex;
+      text-decoration: none;
+      height: auto;
+      padding: 20px 13px;
+      gap: 30px;
+      color: var(--colorBlack);
+      background-color: var(--colorWhite);
+    }
+
+    /* .nav-content.open {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .nav-content.open a {
+      background-color: var(--colorWhite);
+      color: var(--colorBlack);
+      padding: 0;
+    } */
+
+    .burger {
+      display: none;
+    }
+  }
+
+  @media (min-width: 900px) {
+    nav {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .nav-content {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      padding-right: 20px;
+    }
+
+    .burger {
+      display: none;
+    }
+  }
 </style>
