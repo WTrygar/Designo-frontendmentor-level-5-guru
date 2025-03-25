@@ -21,11 +21,6 @@ import cssVars from "../styles/css-vars";
     <a href="#locations">LOCATIONS</a>
     <a href="#contact">CONTACT</a>
   </div>
-  <!-- <img
-      class="open"
-      src="./src/assets/shared/mobile/icon-hamburger.svg"
-      alt="burger"
-    /> -->
 </nav>
 <script>
   function attachListeners() {
@@ -48,12 +43,16 @@ import cssVars from "../styles/css-vars";
 </script>
 
 <style define:vars={cssVars}>
+
+/* navBar */
   nav {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
     background-color: var(--colorWhite);
   }
 
@@ -81,8 +80,9 @@ import cssVars from "../styles/css-vars";
     background-color: var(--colorBlack);
     color: var(--colorWhite);
     padding: 16px 24px;
-    height: 50px; /* shouldn't be fixed! */
+    height: 50px;
   }
+  /* end navBar */
 
   /* Burger */
   .burger {
@@ -105,22 +105,4 @@ import cssVars from "../styles/css-vars";
     display: none;
   }
   /* End: Burger */
-
-  /* .burger {
-    all: unset;
-
-    & > .bgrOpn {
-      display: none;
-    }
-    &.open > .bgrOpn {
-      display: initial;
-    }
-    &.open > .bgrCld {
-      display: none;
-    }
-  } */
-
-  /* .open {
-    src: url("./src/assets/shared/mobile/icon-close.svg");
-  } */
 </style>
