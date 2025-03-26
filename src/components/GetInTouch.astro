@@ -3,18 +3,55 @@ import cssVars from "../styles/css-vars";
 ---
 
 <div class="get-in-touch">
-  <h3>Let's talk about your project</h3>
+  <div class="text-content">
+    <!-- Here should be the h2 and p tags to style the desktop view -->
+  </div>
+  <h2>Let's talk about your project</h2>
+  <p>
+    Ready to take it to the next level? Contact us today and find out how our
+    expertise can help your business grow.
+  </p>
+  <slot />
 </div>
 
 <style define:vars={cssVars}>
   .get-in-touch {
-    /* display: flex;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center; */
+    align-items: center;
+    text-align: center;
+    color: var(--colorWhite);
     width: 90%;
-    height: 327px;
-    margin-bottom: 550px;
+    height: 400px;
+    margin-bottom: 660px;
+    padding-bottom: 128px;
     background-color: var(--colorPeach);
+    border-radius: 20px;
     z-index: 10;
+  }
+
+  .get-in-touch h2 {
+    padding-top: 64px;
+    width: 65%;
+  }
+
+  .get-in-touch p {
+    width: 90%;
+  }
+
+  @media (min-width: 600px) and (max-width: 900px) {
+    .get-in-touch {
+      margin-bottom: 270px;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .get-in-touch {
+      flex-direction: row;
+      width: 75%;
+      height: 300px;
+      margin-bottom: 250px;
+    }
   }
 </style>
