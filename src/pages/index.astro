@@ -3,6 +3,7 @@ import Button from "../components/Button.astro";
 import Footer from "../components/Footer.astro";
 import GetInTouch from "../components/GetInTouch.astro";
 import Navigation from "../components/Navigation.astro";
+import NavigationCard from "../components/NavigationCard.astro";
 import Layout from "../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -11,6 +12,23 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <Navigation />
+  <div>
+    <NavigationCard
+      title="WEB DESIGN"
+      imageUrl="./src/assets/home/desktop/image-web-design-small.jpg"
+      buttonUrl="web-design.astro"
+    />
+    <NavigationCard
+      title="APP DESIGN"
+      imageUrl="./src/assets/home/desktop/image-app-design.jpg"
+      buttonUrl="app-design.astro"
+    />
+    <NavigationCard
+      title="GRAPHIC DESIGN"
+      imageUrl="./src/assets/home/desktop/image-graphic-design.jpg"
+      buttonUrl="app-design.astro"
+    />
+  </div>
   <GetInTouch><Button>GET IN TOUCH</Button></GetInTouch>
   <Footer />
 </Layout>
@@ -18,9 +36,10 @@ import Layout from "../layouts/Layout.astro";
 <style>
   body {
     background-color: antiquewhite;
-    padding-top: 300px;
-    min-height: 100vh;
+    /* padding-top: 300px; */
     display: flex;
+    min-height: 100vh;
+    justify-content: flex-start;
     flex-direction: column;
     height: 100%;
   }

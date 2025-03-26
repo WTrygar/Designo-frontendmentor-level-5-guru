@@ -1,0 +1,28 @@
+---
+import cssVars from "../styles/css-vars";
+
+interface Props {
+  title: string;
+  imageUrl: string;
+  buttonUrl: string;
+}
+
+const { title, imageUrl, buttonUrl } = Astro.props;
+---
+
+<div class="navigation-card">
+  <img src={imageUrl} alt="card-img" />
+  <h3 class="card-title">{title}</h3>
+  <a href={buttonUrl}>VIEW PROJECTS</a>
+</div>
+
+<style define:vars={cssVars}>
+  .navigation-card {
+    /* margin-bottom: 1500px; */
+  }
+
+  .navigation-card img {
+    width: 70%;
+    height: 50%;
+  }
+</style>
