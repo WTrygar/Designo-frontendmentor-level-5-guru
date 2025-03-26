@@ -1,0 +1,203 @@
+---
+import cssVars from "../styles/css-vars";
+---
+
+<footer>
+  <div class="footer-first-line">
+    <div class="logo">
+      <img src="./src/assets/shared/desktop/logo-light.png" alt="Designo" />
+    </div>
+    <div class="footer-links">
+      <a href="#our-company">OUR&nbsp;COMPANY</a>
+      <a href="#locations">LOCATIONS</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+  </div>
+  <div class="footer-second-line">
+    <div class="footer-text">
+      <p><b>Designo Central Office</b></p>
+      <p>3886 Wellington Street</p>
+      <p>Toronto, Ontario M9C 3/5</p>
+    </div>
+    <div class="footer-text">
+      <p><b>Contact us (Central Office)</b></p>
+      <p>P : +1 253-864-8967</p>
+      <p>M : contact@designo.co</p>
+    </div>
+    <div class="footer-icons">
+      <a href="#facebook"
+        ><img src="/src/assets/shared/desktop/icon-facebook.svg" /></a
+      >
+      <a href="#youtube"
+        ><img src="/src/assets/shared/desktop/icon-youtube.svg" /></a
+      >
+      <a href="#twitter"
+        ><img src="/src/assets/shared/desktop/icon-twitter.svg" /></a
+      >
+      <a href="#pinterest"
+        ><img src="/src/assets/shared/desktop/icon-pinterest.svg" /></a
+      >
+      <a href="instagram"
+        ><img src="/src/assets/shared/desktop/icon-instagram.svg" /></a
+      >
+    </div>
+  </div>
+</footer>
+
+<style define:vars={cssVars}>
+  footer {
+    background-color: var(--colorBlack);
+    color: var(--colorWhite);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 140px;
+    margin-top: auto;
+  }
+
+  footer .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 64px auto;
+  }
+
+  footer .logo img {
+    width: 60%;
+    margin-top: 64px;
+  }
+
+  footer .footer-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 30px; */
+  }
+
+  footer .footer-links a {
+    padding-bottom: 32px;
+    text-decoration: none;
+    color: var(--colorWhite);
+  }
+
+  footer .footer-text {
+    line-height: 0px;
+    padding-bottom: 5px;
+  }
+
+  footer .footer-text p {
+    text-align: center;
+    opacity: 50%;
+  }
+
+  footer .footer-icons {
+    margin: 30px auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .footer-icons a {
+    height: 24px;
+  }
+
+  @media (min-width: 600px) and (max-width: 900px) {
+    footer {
+      padding-top: 70px;
+    }
+
+    .footer-first-line {
+      display: flex;
+      justify-content: space-between;
+      width: 95%;
+    }
+
+    footer .logo {
+      margin: 64px 0;
+    }
+
+    footer .logo img {
+      width: 202px;
+    }
+
+    footer .footer-links {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer .footer-links a {
+      padding-left: 40px;
+      padding-bottom: 0;
+    }
+
+    .footer-second-line {
+      display: flex;
+      justify-content: space-between;
+      width: 94%;
+      padding-bottom: 80px;
+    }
+
+    footer .footer-icons {
+      margin: 0;
+      align-items: end;
+    }
+
+    footer .footer-text p {
+      margin: 32px auto 0 auto;
+    }
+  }
+
+  @media (min-width: 900px) {
+    footer {
+      padding-top: 50px;
+    }
+
+    .footer-first-line {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+    }
+
+    footer .logo {
+      margin: 64px 0;
+    }
+
+    footer .logo img {
+      width: 202px;
+    }
+
+    footer .footer-links {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer .footer-links a {
+      padding-left: 40px;
+      padding-bottom: 0;
+    }
+
+    .footer-second-line {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      padding-bottom: 80px;
+    }
+
+    footer .footer-icons {
+      margin: 0;
+      align-items: end;
+    }
+
+    footer .footer-text p {
+      margin: 32px auto 0 auto;
+    }
+  }
+</style>
