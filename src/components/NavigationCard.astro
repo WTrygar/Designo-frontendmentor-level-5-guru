@@ -2,22 +2,25 @@
 import cssVars from "../styles/css-vars";
 
 interface Props {
+  class: string;
   title: string;
   imageUrl: string;
   img: string;
   buttonUrl: string;
 }
 
-const { title, imageUrl, img, buttonUrl } = Astro.props;
+const { class: className, title, imageUrl, img, buttonUrl } = Astro.props;
 ---
 
-<div class="navigation-card">
+<div class={className}>
   <h3 class="card-title">{title}</h3>
   <a href={buttonUrl}>VIEW PROJECTS</a>
 </div>
 
 <style define:vars={{ cssVars, image: `url("${img}")` }}>
-  .navigation-card {
+  .one,
+  .two,
+  .three {
     background-image: var(--image);
     width: 90%;
     height: 300px;
@@ -29,21 +32,33 @@ const { title, imageUrl, img, buttonUrl } = Astro.props;
     border-radius: 15px;
   }
 
-  .navigation-card h3 {
+  .one h3,
+  .two h3,
+  .three h3 {
     text-align: center;
     color: white;
   }
 
-  .navigation-card a {
+  .one a,
+  .two a,
+  .three a {
     text-decoration: none;
     color: white;
   }
 
   @media (min-width: 600px) and (max-width: 900px) {
-    .navigation-card {
-    height: 200px;
+    .one,
+    .two,
+    .three {
+      height: 200px;
+    }
   }
 
   @media (min-width: 900px) {
+    .one {
+      grid-row-start: 1;
+      grid-row-end: 3;
+      height: 630px;
+    }
   }
 </style>

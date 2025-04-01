@@ -12,12 +12,19 @@ import web_design_small from "/src/assets/home/desktop/image-web-design-small.jp
 
 const toursData = [
   {
+    className: "one",
     name: "WEB DESIGN",
     path: "/image-web-design-small",
     img: web_design_small,
   },
-  { name: "APP DESIGN", path: "/image-app-design", img: app_design },
   {
+    className: "two",
+    name: "APP DESIGN",
+    path: "/image-app-design",
+    img: app_design,
+  },
+  {
+    className: "three",
     name: "GRAPHIC DESIGN",
     path: "/image-graphic-design",
     img: graphic_design,
@@ -34,6 +41,7 @@ const toursData = [
     {
       toursData.map((i) => (
         <NavigationCard
+          class={i.className}
           title={i.name}
           imageUrl={i.path}
           img={i.img.src}
@@ -57,7 +65,9 @@ const toursData = [
     height: 100%;
   }
 
-  .navigation-card {
+  .one,
+  .two,
+  .three {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -73,9 +83,8 @@ const toursData = [
       width: 70%;
       display: grid;
       justify-content: normal;
-      grid-template-areas:
-        "one two"
-        "one three";
+      grid-template-columns: auto auto;
+      gap: 10px;
     }
   }
 </style>
