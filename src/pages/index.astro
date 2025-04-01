@@ -30,7 +30,7 @@ const toursData = [
 
 <Layout>
   <Navigation />
-  <div>
+  <div class="navigation-card">
     {
       toursData.map((i) => (
         <NavigationCard
@@ -41,21 +41,6 @@ const toursData = [
         />
       ))
     }
-    <!-- <NavigationCard
-      title="WEB DESIGN"
-      imageUrl="./src/assets/home/desktop/image-web-design-small.jpg"
-      buttonUrl="web-design.astro"
-    />
-    <NavigationCard
-      title="APP DESIGN"
-      imageUrl="./src/assets/home/desktop/image-app-design.jpg"
-      buttonUrl="app-design.astro"
-    />
-    <NavigationCard
-      title="GRAPHIC DESIGN"
-      imageUrl="./src/assets/home/desktop/image-graphic-design.jpg"
-      buttonUrl="app-design.astro"
-    /> -->
   </div>
   <GetInTouch><Button>GET IN TOUCH</Button></GetInTouch>
   <Footer />
@@ -70,5 +55,27 @@ const toursData = [
     justify-content: flex-start;
     flex-direction: column;
     height: 100%;
+  }
+
+  .navigation-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  @media (min-width: 600px) and (max-width: 900px) {
+  }
+
+  @media (min-width: 900px) {
+    .navigation-card {
+      width: 70%;
+      display: grid;
+      justify-content: normal;
+      grid-template-areas:
+        "one two"
+        "one three";
+    }
   }
 </style>
