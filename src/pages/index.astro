@@ -6,6 +6,24 @@ import Navigation from "../components/Navigation.astro";
 import NavigationCard from "../components/NavigationCard.astro";
 import Layout from "../layouts/Layout.astro";
 
+import app_design from "/src/assets/home/desktop/image-app-design.jpg";
+import graphic_design from "/src/assets/home/desktop/image-graphic-design.jpg";
+import web_design_small from "/src/assets/home/desktop/image-web-design-small.jpg";
+
+const toursData = [
+  {
+    name: "WEB DESIGN",
+    path: "/image-web-design-small",
+    img: web_design_small,
+  },
+  { name: "APP DESIGN", path: "/image-app-design", img: app_design },
+  {
+    name: "GRAPHIC DESIGN",
+    path: "/image-graphic-design",
+    img: graphic_design,
+  },
+];
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -13,7 +31,17 @@ import Layout from "../layouts/Layout.astro";
 <Layout>
   <Navigation />
   <div>
-    <NavigationCard
+    {
+      toursData.map((i) => (
+        <NavigationCard
+          title={i.name}
+          imageUrl={i.path}
+          img={i.img.src}
+          buttonUrl="#"
+        />
+      ))
+    }
+    <!-- <NavigationCard
       title="WEB DESIGN"
       imageUrl="./src/assets/home/desktop/image-web-design-small.jpg"
       buttonUrl="web-design.astro"
@@ -27,7 +55,7 @@ import Layout from "../layouts/Layout.astro";
       title="GRAPHIC DESIGN"
       imageUrl="./src/assets/home/desktop/image-graphic-design.jpg"
       buttonUrl="app-design.astro"
-    />
+    /> -->
   </div>
   <GetInTouch><Button>GET IN TOUCH</Button></GetInTouch>
   <Footer />

@@ -4,25 +4,38 @@ import cssVars from "../styles/css-vars";
 interface Props {
   title: string;
   imageUrl: string;
+  img: string;
   buttonUrl: string;
 }
 
-const { title, imageUrl, buttonUrl } = Astro.props;
+const { title, imageUrl, img, buttonUrl } = Astro.props;
 ---
 
 <div class="navigation-card">
-  <img src={imageUrl} alt="card-img" />
   <h3 class="card-title">{title}</h3>
   <a href={buttonUrl}>VIEW PROJECTS</a>
 </div>
 
-<style define:vars={cssVars}>
+<style define:vars={{ cssVars, image: `url("${img}")` }}>
   .navigation-card {
-    /* margin-bottom: 1500px; */
+    background-image: var(--image);
+    width: 100%;
+    height: 300px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
   }
 
-  .navigation-card img {
-    width: 70%;
-    height: 50%;
+  .navigation-card h3 {
+    text-align: center;
+    color: white;
+  }
+
+  .navigation-card a {
+    text-decoration: none;
+    color: white;
   }
 </style>
