@@ -1,16 +1,24 @@
 ---
+// components imports
 import Button from "../components/Button.astro";
+import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
 import GetInTouch from "../components/GetInTouch.astro";
 import Navigation from "../components/Navigation.astro";
 import NavigationCard from "../components/NavigationCard.astro";
 import Layout from "../layouts/Layout.astro";
 
+// navigation cards images imports
 import app_design from "/src/assets/home/desktop/image-app-design.jpg";
 import graphic_design from "/src/assets/home/desktop/image-graphic-design.jpg";
 import web_design_small from "/src/assets/home/desktop/image-web-design-small.jpg";
 
-const toursData = [
+// cards images imports
+import illustration_friendly from "/src/assets/home/desktop/illustration-friendly.svg";
+import illustration_passionate from "/src/assets/home/desktop/illustration-passionate.svg";
+import illustration_resourceful from "/src/assets/home/desktop/illustration-resourceful.svg";
+
+const navigationCards = [
   {
     className: "one",
     name: "WEB DESIGN",
@@ -31,6 +39,30 @@ const toursData = [
   },
 ];
 
+const cards = [
+  {
+    className: "one",
+    name: "PASSIONATE",
+    path: "/illustration-passionate",
+    img: illustration_passionate,
+    text: "Each project starts with an in-depth brand research to ensure we only create products that serve a purpose. We merge art, design, and technology into exciting new solutions.",
+  },
+  {
+    className: "two",
+    name: "RESOURCEFUL",
+    path: "/illustration-resourceful",
+    img: illustration_resourceful,
+    text: "Everything that we do has a strategic purpose. We use an agile approach in all of our projects and value customer collaboration. It guarantees superior results that fulfill our clients’ needs.",
+  },
+  {
+    className: "three",
+    name: "FRIENDLY",
+    path: "/illustration-friendly",
+    img: illustration_friendly,
+    text: " We are a group of enthusiastic folks who know how to put people first. Our success depends on our customers, and we strive to give them the best experience a company can provide.",
+  },
+];
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -39,13 +71,26 @@ const toursData = [
   <Navigation />
   <div class="navigation-card">
     {
-      toursData.map((i) => (
+      navigationCards.map((i) => (
         <NavigationCard
           class={i.className}
           title={i.name}
           imageUrl={i.path}
           img={i.img.src}
           buttonUrl="#"
+        />
+      ))
+    }
+  </div>
+  <div>
+    {
+      cards.map((i) => (
+        <Card
+          class={i.className}
+          title={i.name}
+          imageUrl={i.path}
+          img={i.img.src}
+          text={i.text}
         />
       ))
     }

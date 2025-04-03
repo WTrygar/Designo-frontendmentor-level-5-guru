@@ -1,0 +1,42 @@
+---
+import cssVars from "../styles/css-vars";
+
+interface Props {
+  class: string;
+  title: string;
+  imageUrl: string;
+  img: string;
+  text: string;
+}
+
+const { class: className, title, imageUrl, img, text } = Astro.props;
+---
+
+<div class={className}>
+  <img src={imageUrl} alt="card image" />
+  <h3 class="card-title">{title}</h3>
+  <p>{text}</p>
+</div>
+
+<style define:vars={{ cssVars, image: `url("${img}")` }}>
+  .one,
+  .two,
+  .three {
+    background-image: var(--image);
+    background-size: cover;
+    width: 90%;
+    height: 300px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+  }
+
+  @media (min-width: 600px) and (max-width: 900px) {
+  }
+
+  @media (min-width: 900px) {
+  }
+</style>
