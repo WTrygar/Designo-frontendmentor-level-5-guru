@@ -41,21 +41,21 @@ const navigationCards = [
 
 const cards = [
   {
-    className: "one",
+    className: "first-card",
     name: "PASSIONATE",
     path: "/illustration-passionate",
     img: illustration_passionate,
     text: "Each project starts with an in-depth brand research to ensure we only create products that serve a purpose. We merge art, design, and technology into exciting new solutions.",
   },
   {
-    className: "two",
+    className: "second-card",
     name: "RESOURCEFUL",
     path: "/illustration-resourceful",
     img: illustration_resourceful,
     text: "Everything that we do has a strategic purpose. We use an agile approach in all of our projects and value customer collaboration. It guarantees superior results that fulfill our clients’ needs.",
   },
   {
-    className: "three",
+    className: "third-card",
     name: "FRIENDLY",
     path: "/illustration-friendly",
     img: illustration_friendly,
@@ -69,7 +69,7 @@ const cards = [
 
 <Layout>
   <Navigation />
-  <div class="navigation-card">
+  <div class="navigation-cards">
     {
       navigationCards.map((i) => (
         <NavigationCard
@@ -82,7 +82,7 @@ const cards = [
       ))
     }
   </div>
-  <div>
+  <div class="cards">
     {
       cards.map((i) => (
         <Card
@@ -110,9 +110,38 @@ const cards = [
     height: 100%;
   }
 
+  /* navigation cards */
+
+  .navigation-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .one,
   .two,
   .three {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* cards */
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+
+  .first-card,
+  .second-card,
+  .third-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -124,7 +153,7 @@ const cards = [
   }
 
   @media (min-width: 900px) {
-    .navigation-card {
+    .navigation-cards {
       width: 70%;
       display: grid;
       justify-content: normal;
