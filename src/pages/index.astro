@@ -1,9 +1,7 @@
 ---
 // components imports
-import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
-import GetInTouch from "../components/GetInTouch.astro";
 import Navigation from "../components/Navigation.astro";
 import NavigationCard from "../components/NavigationCard.astro";
 import Layout from "../layouts/Layout.astro";
@@ -95,7 +93,7 @@ const cards = [
       ))
     }
   </div>
-  <GetInTouch><Button>GET IN TOUCH</Button></GetInTouch>
+  <!-- <GetInTouch><Button>GET IN TOUCH</Button></GetInTouch> -->
   <Footer />
 </Layout>
 
@@ -104,7 +102,7 @@ const cards = [
     background-color: antiquewhite;
     /* padding-top: 300px; */
     display: flex;
-    min-height: 100vh;
+    min-height: 300vh;
     justify-content: flex-start;
     flex-direction: column;
     height: 100%;
@@ -136,7 +134,8 @@ const cards = [
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: 80%;
+    margin-bottom: 380px;
   }
 
   .first-card,
@@ -154,11 +153,16 @@ const cards = [
 
   @media (min-width: 900px) {
     .navigation-cards {
-      width: 70%;
+      width: 80%;
       display: grid;
       justify-content: normal;
-      grid-template-columns: auto auto;
-      gap: 10px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px;
+    }
+
+    .cards {
+      flex-direction: row;
+      gap: 50px;
     }
   }
 </style>
