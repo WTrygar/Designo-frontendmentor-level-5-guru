@@ -1,9 +1,65 @@
 ---
-import Button from "../components/Button.astro";
+// components imports
+import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
-import GetInTouch from "../components/GetInTouch.astro";
 import Navigation from "../components/Navigation.astro";
+import NavigationCard from "../components/NavigationCard.astro";
 import Layout from "../layouts/Layout.astro";
+
+// navigation cards images imports
+import app_design from "/src/assets/home/desktop/image-app-design.jpg";
+import graphic_design from "/src/assets/home/desktop/image-graphic-design.jpg";
+import web_design_small from "/src/assets/home/desktop/image-web-design-small.jpg";
+
+// cards images imports
+import illustration_friendly from "/src/assets/home/desktop/illustration-friendly.svg";
+import illustration_passionate from "/src/assets/home/desktop/illustration-passionate.svg";
+import illustration_resourceful from "/src/assets/home/desktop/illustration-resourceful.svg";
+
+const navigationCards = [
+  {
+    className: "one",
+    name: "WEB DESIGN",
+    path: "/image-web-design-small",
+    img: web_design_small,
+  },
+  {
+    className: "two",
+    name: "APP DESIGN",
+    path: "/image-app-design",
+    img: app_design,
+  },
+  {
+    className: "three",
+    name: "GRAPHIC DESIGN",
+    path: "/image-graphic-design",
+    img: graphic_design,
+  },
+];
+
+const cards = [
+  {
+    className: "first-card",
+    name: "PASSIONATE",
+    path: "/illustration-passionate",
+    img: illustration_passionate,
+    text: "Each project starts with an in-depth brand research to ensure we only create products that serve a purpose. We merge art, design, and technology into exciting new solutions.",
+  },
+  {
+    className: "second-card",
+    name: "RESOURCEFUL",
+    path: "/illustration-resourceful",
+    img: illustration_resourceful,
+    text: "Everything that we do has a strategic purpose. We use an agile approach in all of our projects and value customer collaboration. It guarantees superior results that fulfill our clients’ needs.",
+  },
+  {
+    className: "third-card",
+    name: "FRIENDLY",
+    path: "/illustration-friendly",
+    img: illustration_friendly,
+    text: " We are a group of enthusiastic folks who know how to put people first. Our success depends on our customers, and we strive to give them the best experience a company can provide.",
+  },
+];
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -11,17 +67,102 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <Navigation />
-  <GetInTouch><Button>GET IN TOUCH</Button></GetInTouch>
+  <div class="navigation-cards">
+    {
+      navigationCards.map((i) => (
+        <NavigationCard
+          class={i.className}
+          title={i.name}
+          imageUrl={i.path}
+          img={i.img.src}
+          buttonUrl="#"
+        />
+      ))
+    }
+  </div>
+  <div class="cards">
+    {
+      cards.map((i) => (
+        <Card
+          class={i.className}
+          title={i.name}
+          imageUrl={i.path}
+          img={i.img.src}
+          text={i.text}
+        />
+      ))
+    }
+  </div>
+  <!-- <GetInTouch><Button>GET IN TOUCH</Button></GetInTouch> -->
   <Footer />
 </Layout>
 
 <style>
   body {
     background-color: antiquewhite;
-    padding-top: 300px;
-    min-height: 100vh;
+    /* padding-top: 300px; */
     display: flex;
+    min-height: 300vh;
+    justify-content: flex-start;
     flex-direction: column;
     height: 100%;
+  }
+
+  /* navigation cards */
+
+  .navigation-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .one,
+  .two,
+  .three {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* cards */
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 380px;
+  }
+
+  .first-card,
+  .second-card,
+  .third-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  @media (min-width: 600px) and (max-width: 900px) {
+  }
+
+  @media (min-width: 900px) {
+    .navigation-cards {
+      width: 80%;
+      display: grid;
+      justify-content: normal;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px;
+    }
+
+    .cards {
+      flex-direction: row;
+      gap: 50px;
+    }
   }
 </style>

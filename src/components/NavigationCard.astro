@@ -1,0 +1,69 @@
+---
+import cssVars from "../styles/css-vars";
+
+interface Props {
+  class: string;
+  title: string;
+  imageUrl: string;
+  img: string;
+  buttonUrl: string;
+}
+
+const { class: className, title, imageUrl, img, buttonUrl } = Astro.props;
+---
+
+<div class={className}>
+  <h3 class="card-title">{title}</h3>
+  <a href={buttonUrl}>VIEW PROJECTS</a>
+</div>
+
+<style define:vars={{ cssVars, image: `url("${img}")` }}>
+  .one,
+  .two,
+  .three {
+    background-image: var(--image);
+    width: 100%;
+    height: 300px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+  }
+
+  .one h3,
+  .two h3,
+  .three h3 {
+    text-align: center;
+    color: white;
+  }
+
+  .one a,
+  .two a,
+  .three a {
+    text-decoration: none;
+    color: white;
+  }
+
+  @media (min-width: 600px) and (max-width: 900px) {
+    .one,
+    .two,
+    .three {
+      height: 200px;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .one,
+    .two,
+    .three {
+      margin: 0;
+    }
+    .one {
+      grid-row-start: 1;
+      grid-row-end: 3;
+      height: 630px;
+    }
+  }
+</style>
