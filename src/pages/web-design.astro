@@ -1,8 +1,8 @@
 ---
-import Button from "../components/Button.astro";
 import Footer from "../components/Footer.astro";
 import Navigation from "../components/Navigation.astro";
 import NavigationCard from "../components/NavigationCard.astro";
+import PageHero from "../components/PageHero.astro";
 import Layout from "../layouts/Layout.astro";
 
 import app_design from "/src/assets/home/desktop/image-app-design.jpg";
@@ -28,24 +28,32 @@ const navigationCards = [
 
 <Layout>
   <Navigation />
+
+  <PageHero>
+    <h2 slot="header">Web Design</h2>
+    <p slot="text">
+      We build websites that serve as powerful marketing tools and bring
+      memorable brand experiences.
+    </p>
+  </PageHero>
+
+  <div class="navigation-cards">
+    {
+      navigationCards.map((i) => (
+        <NavigationCard
+          class={i.className}
+          title={i.name}
+          imageUrl={i.path}
+          img={i.img.src}
+          buttonUrl="#"
+        />
+      ))
+    }
+  </div>
+
+  <!-- <GetInTouch><Button>GET IN TOUCH</Button></GetInTouch> -->
+  <Footer />
 </Layout>
-<div class="navigation-cards">
-  {
-    navigationCards.map((i) => (
-      <NavigationCard
-        class={i.className}
-        title={i.name}
-        imageUrl={i.path}
-        img={i.img.src}
-        buttonUrl="#"
-      />
-    ))
-  }
-</div>
-
-<!-- <GetInTouch><Button>GET IN TOUCH</Button></GetInTouch> -->
-<Footer />
-
 <style>
   body {
     background-color: antiquewhite;
@@ -57,6 +65,9 @@ const navigationCards = [
     height: 100%;
   }
 
+  body #page {
+    padding-top: 300px;
+  }
   /* navigation cards */
 
   .navigation-cards {
@@ -77,7 +88,6 @@ const navigationCards = [
   }
 
   /* cards */
-
 
   .first-card,
   .second-card,
@@ -100,6 +110,5 @@ const navigationCards = [
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 30px;
     }
-
   }
 </style>
