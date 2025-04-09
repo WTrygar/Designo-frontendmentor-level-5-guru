@@ -1,10 +1,105 @@
 ---
+import Button from "../components/Button.astro";
+import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
+import NavigationCard from "../components/NavigationCard.astro";
 import Layout from "../layouts/Layout.astro";
+
+import app_design from "/src/assets/home/desktop/image-app-design.jpg";
+import graphic_design from "/src/assets/home/desktop/image-graphic-design.jpg";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const navigationCards = [
+  {
+    className: "two",
+    name: "APP DESIGN",
+    path: "/image-app-design",
+    img: app_design,
+  },
+  {
+    className: "three",
+    name: "GRAPHIC DESIGN",
+    path: "/image-graphic-design",
+    img: graphic_design,
+  },
+];
 ---
 
 <Layout>
-  <h1>web-design</h1>
+  <Navigation />
 </Layout>
+<div class="navigation-cards">
+  {
+    navigationCards.map((i) => (
+      <NavigationCard
+        class={i.className}
+        title={i.name}
+        imageUrl={i.path}
+        img={i.img.src}
+        buttonUrl="#"
+      />
+    ))
+  }
+</div>
+
+<!-- <GetInTouch><Button>GET IN TOUCH</Button></GetInTouch> -->
+<Footer />
+
+<style>
+  body {
+    background-color: antiquewhite;
+    /* padding-top: 300px; */
+    display: flex;
+    min-height: 300vh;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  /* navigation cards */
+
+  .navigation-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .one,
+  .two,
+  .three {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* cards */
+
+
+  .first-card,
+  .second-card,
+  .third-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  @media (min-width: 600px) and (max-width: 900px) {
+  }
+
+  @media (min-width: 900px) {
+    .navigation-cards {
+      width: 80%;
+      display: grid;
+      justify-content: normal;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px;
+    }
+
+  }
+</style>
