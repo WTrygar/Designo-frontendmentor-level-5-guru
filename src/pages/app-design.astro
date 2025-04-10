@@ -1,5 +1,7 @@
 ---
+import Button from "../components/Button.astro";
 import Footer from "../components/Footer.astro";
+import GetInTouch from "../components/GetInTouch.astro";
 import Navigation from "../components/Navigation.astro";
 import NavigationCard from "../components/NavigationCard.astro";
 import PageHero from "../components/PageHero.astro";
@@ -113,7 +115,7 @@ const navigationCards = [
     }
   </div>
 
-  <!-- <GetInTouch><Button>GET IN TOUCH</Button></GetInTouch> -->
+  <GetInTouch><Button>GET IN TOUCH</Button></GetInTouch>
   <Footer />
 </Layout>
 <style>
@@ -138,7 +140,7 @@ const navigationCards = [
     justify-content: center;
     align-items: center;
     margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 250px;
   }
 
   .one,
@@ -174,6 +176,9 @@ const navigationCards = [
   }
 
   @media (min-width: 600px) and (max-width: 900px) {
+    .navigation-cards {
+      width: 95%;
+    }
   }
 
   @media (min-width: 900px) {
@@ -191,7 +196,7 @@ const navigationCards = [
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: flex-start;
-      gap: 29px;
+      gap: 27px;
     }
   }
 </style>
