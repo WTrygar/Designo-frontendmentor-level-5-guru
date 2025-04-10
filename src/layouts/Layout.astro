@@ -76,21 +76,23 @@ import { ClientRouter } from "astro:transitions";
     position: relative;
 
     /* THIS IS TERRIBLE */
-    padding-top: 100px;
+    padding-top: 95px;
     /* BUT IT'S KEEPING THIS PLACE IN ONE PEACE */
   }
 
   @media (min-width: 600px) and (max-width: 900px) {
     body #page {
       /* THIS IS TERRIBLE */
-      padding-top: 650px;
+      padding-top: 100px;
       /* BUT IT'S KEEPING THIS PLACE IN ONE PEACE */
     }
   }
 
   @media (min-width: 900px) {
-    /* THIS IS TERRIBLE */
-    padding-top: 650px;
-    /* BUT IT'S KEEPING THIS PLACE IN ONE PEACE */
+    body #page {
+      /* THIS IS TERRIBLE */
+      padding-top: 100px;
+      /* BUT IT'S KEEPING THIS PLACE IN ONE PEACE */
+    }
   }
 </style>
