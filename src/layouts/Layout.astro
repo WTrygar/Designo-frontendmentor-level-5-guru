@@ -72,26 +72,27 @@ import { ClientRouter } from "astro:transitions";
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     position: relative;
 
     /* THIS IS TERRIBLE */
-    padding-top: 650px;
+    padding-top: 95px;
     /* BUT IT'S KEEPING THIS PLACE IN ONE PEACE */
   }
 
   @media (min-width: 600px) and (max-width: 900px) {
     body #page {
-    /* THIS IS TERRIBLE */
-    padding-top: 650px;
-    /* BUT IT'S KEEPING THIS PLACE IN ONE PEACE */
-  }
+      /* THIS IS TERRIBLE */
+      padding-top: 100px;
+      /* BUT IT'S KEEPING THIS PLACE IN ONE PEACE */
+    }
   }
 
   @media (min-width: 900px) {
-    /* THIS IS TERRIBLE */
-    padding-top: 650px;
-    /* BUT IT'S KEEPING THIS PLACE IN ONE PEACE */
-  }
+    body #page {
+      /* THIS IS TERRIBLE */
+      padding-top: 100px;
+      /* BUT IT'S KEEPING THIS PLACE IN ONE PEACE */
+    }
   }
 </style>

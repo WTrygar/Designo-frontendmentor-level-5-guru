@@ -1,0 +1,108 @@
+---
+import cssVars from "../styles/css-vars";
+---
+
+<div class="homepage-hero">
+  <div class="hero-content">
+    <h2>Award-winning custom designs and digital branding solutions</h2>
+    <p>
+      With over 10 years in the industry, we are experienced in creating fully
+      responsive websites, app design, and engaging brand experiences. Find out
+      more about our services.
+    </p>
+    <slot />
+  </div>
+  <div class="hero-img">
+    <img
+      src="./src/assets/home/desktop/image-hero-phone.png"
+      alt="image-hero-phone"
+    />
+  </div>
+</div>
+
+<style define:vars={cssVars}>
+  .homepage-hero {
+    position: absolute;
+    top: 95px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--colorPeach);
+    color: var(--colorWhite);
+  }
+
+  .homepage-hero .hero-content {
+    width: 100%;
+  }
+
+  .homepage-hero .hero-content h2,
+  p {
+    /* margin: auto; */
+    /* width: 70%; */
+  }
+
+  .homepage-hero .hero-img {
+    width: 100%;
+    height: 25rem;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  .homepage-hero .hero-img img {
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+    margin-top: -60px;
+    /* margin-left: -210px; */
+  }
+
+  @media (min-width: 600px) and (max-width: 900px) {
+    .homepage-hero {
+      top: 100px;
+      width: 95%;
+      border-radius: 25px;
+    }
+
+    .homepage-hero .hero-content {
+      width: 70%;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .homepage-hero {
+      flex-direction: row;
+      align-items: flex-start;
+      width: 80%;
+      border-radius: 25px;
+      padding-top: 50px;
+
+      /* padding: 100px 0; */
+    }
+
+    .homepage-hero .hero-content {
+      text-align: left;
+      margin-left: 95px;
+      margin-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .homepage-hero .hero-img {
+      margin-bottom: -300px;
+      /* margin-left: -150px; */
+
+      height: 100%;
+
+      /* margin-bottom: 20px; */
+    }
+
+    .homepage-hero .hero-img img {
+      height: 100%;
+      width: 100%;
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
+  }
+</style>
