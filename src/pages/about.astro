@@ -3,30 +3,36 @@ import AboutUs from "../components/AboutUs.astro";
 import Button from "../components/Button.astro";
 import Footer from "../components/Footer.astro";
 import GetInTouch from "../components/GetInTouch.astro";
+import LocationCard from "../components/LocationCard.astro";
 import Navigation from "../components/Navigation.astro";
 import Layout from "../layouts/Layout.astro";
+
+// cards images imports
+import illustration_australia from "/src/assets/shared/desktop/illustration-australia.svg";
+import illustration_canada from "/src/assets/shared/desktop/illustration-canada.svg";
+import illustration_united_kingdom from "/src/assets/shared/desktop/illustration-united-kingdom.svg";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 
-const aboutCards = [
+const LocationCards = [
   {
-    className: "one",
-    name: "About Us",
-    text: "Founded in 2010, we are a creative agency that produces lasting results for our clients. We’ve partnered with many startups, corporations, and nonprofits alike to craft designs that make real impact. We’re always looking forward to creating brands, products, and digital experiences that connect with our clients’ audiences.",
-    path: "/image-airfilter",
+    className: "first-card",
+    img: illustration_canada,
+    name: "CANADA",
+    path: "/illustration-canada",
   },
   {
-    className: "two",
-    name: "EYECAM",
-    text: "Product that lets you edit your favorite photos and videos at any time",
-    path: "/image-eyecam",
+    className: "second-card",
+    img: illustration_australia,
+    name: "AUSTRALIA",
+    path: "/illustration-australia",
   },
   {
-    className: "three",
-    name: "FACEIT",
-    text: "Get to meet your favorite internet superstar with the faceit app",
-    path: "/image-faceit",
+    className: "third-card",
+    img: illustration_united_kingdom,
+    name: "UNITED KINGDOM",
+    path: "/image-united-kingdom",
   },
 ];
 ---
@@ -58,6 +64,16 @@ const aboutCards = [
     </p>
   </AboutUs>
 
+  <div class="location-cards">
+    {
+      LocationCards.map((i) => (
+        <LocationCard class={i.className} img={i.img.src} title={i.name}>
+          <Button secondary={true}>SEE LOCATION</Button>
+        </LocationCard>
+      ))
+    }
+  </div>
+
   <AboutUs tertiary={true}>
     <h2 slot="about-header">The real deal</h2>
     <p slot="about-paragraph">
@@ -72,14 +88,40 @@ const aboutCards = [
       drive real results.
     </p>
   </AboutUs>
+  <div class="spacer"></div>
 
   <GetInTouch><Button>GET IN TOUCH</Button></GetInTouch>
   <Footer />
 </Layout>
 
 <style>
+  .spacer {
+    height: 400px;
+  }
   p,
   h2 {
     width: 70%;
+  }
+
+  .location-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+  @media (min-width: 600px) and (max-width: 900px) {
+    .spacer {
+      height: 300px;
+    }
+  }
+  @media (min-width: 900px) {
+    .spacer {
+      height: 300px;
+    }
+    .location-cards {
+      flex-direction: row;
+      gap: 10px;
+    }
   }
 </style>
