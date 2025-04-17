@@ -14,7 +14,7 @@ import cssVars from "../styles/css-vars";
 <Layout>
   <Navigation />
   <MapCard>
-    <h2 slot="map-header">Canada</h2>
+    <h2 id="canada" slot="map-header">Canada</h2>
 
     <p slot="map-address">
       <b>Designo Central Office</b><br />
@@ -26,7 +26,7 @@ import cssVars from "../styles/css-vars";
     </p>
   </MapCard>
   <MapCard secondary={true}>
-    <h2 slot="map-header">Australia</h2>
+    <h2 id="australia" slot="map-header">Australia</h2>
 
     <p slot="map-address">
       <b>Designo AU Office</b><br />
@@ -38,7 +38,7 @@ import cssVars from "../styles/css-vars";
     </p>
   </MapCard>
   <MapCard tertiary={true}>
-    <h2 slot="map-header">United Kingdom</h2>
+    <h2 id="uk" slot="map-header">United Kingdom</h2>
     <p slot="map-address">
       <b>Designo UK Office</b><br />
       13 Colorado Way<br />Rhyd-y-fro SA8 9GA
@@ -50,7 +50,7 @@ import cssVars from "../styles/css-vars";
   </MapCard>
   <div class="spacer"></div>
 
-  <GetInTouch><Button>GET IN TOUCH</Button></GetInTouch>
+  <GetInTouch><a href="/contact"><Button>GET IN TOUCH</Button></a></GetInTouch>
   <Footer />
 </Layout>
 

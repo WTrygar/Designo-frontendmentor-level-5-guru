@@ -24,21 +24,24 @@ const navigationCards = [
     className: "one",
     name: "WEB DESIGN",
     path: "/image-web-design-small",
+    btnlink: "/web-design",
     img: web_design_small,
   },
   {
     className: "two",
     name: "APP DESIGN",
     path: "/image-app-design",
+    btnlink: "/app-design",
     img: app_design,
   },
   {
     className: "three",
     name: "GRAPHIC DESIGN",
     path: "/image-graphic-design",
+    btnlink: "/graphic-design",
     img: graphic_design,
   },
-];
+] as const;
 
 const cards = [
   {
@@ -64,6 +67,20 @@ const cards = [
   },
 ];
 
+// ❌ var zmienna;
+// const stala;
+// let fancyZmienna;
+
+// const type1 = {
+//   test: "123"
+// } as const;
+
+// const type2 = {
+//   test: "987"
+// };
+
+// Think: BIG PICTURE
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -71,7 +88,7 @@ const cards = [
 <Layout>
   <Navigation />
   <HomePageHero>
-    <Button>LEARN MORE</Button>
+    <a href="/about"><Button>LEARN MORE</Button></a>
   </HomePageHero>
   <div class="navigation-cards">
     {
@@ -81,11 +98,27 @@ const cards = [
           title={i.name}
           imageUrl={i.path}
           img={i.img.src}
-          buttonUrl="#"
+          buttonUrl={i.btnlink}
         />
       ))
     }
   </div>
+  <!-- <div class="navigation-cards">
+    {
+      navigationCards.map((i) => (
+        <NavigationCard
+          class={i.className}
+          title={i.name}
+          buttonUrl="#"
+        >
+          <Picture 
+            src="link/to/your/source" 
+            srcset={} 
+          />
+        </NavigationCard>
+      ))
+    }
+  </div> -->
   <div class="cards">
     {
       cards.map((i) => (
@@ -100,7 +133,7 @@ const cards = [
     }
   </div>
 
-  <GetInTouch><Button>GET IN TOUCH</Button></GetInTouch>
+  <GetInTouch><a href="/contact"><Button>GET IN TOUCH</Button></a></GetInTouch>
 
   <Footer />
 </Layout>

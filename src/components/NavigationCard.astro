@@ -1,22 +1,48 @@
 ---
 import cssVars from "../styles/css-vars";
 
+type imageProps = {
+  src: string;
+  srcset?: {
+    source: string;
+    media: string;
+  }[];
+};
+
 interface Props {
   class: string;
   title: string;
   imageUrl: string;
   img: string;
+  images?: imageProps[];
   buttonUrl: string;
 }
 
-const { class: className, title, imageUrl, img, buttonUrl } = Astro.props;
+const { class: className, title, imageUrl, img, buttonUrl, images } = Astro.props;
+
+// const firstElementBig = images?.length > 2;
 ---
 
 <div class={className}>
   <h3 class="card-title">{title}</h3>
   <a href={buttonUrl}>VIEW PROJECTS</a>
+  <!-- 
+    <a class:list={['card-container', className, { "first-img-big": firstElementBig }]} href="">
+    * map => image
+    { i
+     mages && images.map(image => {
+      <picture>
+      { image.srcset.map((source) => {
+        <source srcset={source.source} media="(source.media)" />
+       })}
+        <img src={image.src} alt={alt} loading="lazy" decoding="async" />
+      </picture>
+     })}
+    <h3>{title}</h3>
+    <p>View projects</p>
+    </a>
+  -->
 </div>
-
 <style define:vars={{ cssVars, image: `url("${img}")` }}>
   .one,
   .two,
@@ -65,5 +91,11 @@ const { class: className, title, imageUrl, img, buttonUrl } = Astro.props;
       grid-row-end: 3;
       height: 630px;
     }
+    /* .first-image-big --> zamiast .one */
+    /* 
+    :nth-child(1)
+    :nth-child(2)
+    :nth-child(3) 
+    */
   }
 </style>
