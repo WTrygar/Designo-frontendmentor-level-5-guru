@@ -73,12 +73,14 @@ const navigationCards = [
     className: "two",
     name: "APP DESIGN",
     path: "/image-app-design",
+    btnlink: "/app-design",
     img: app_design,
   },
   {
     className: "three",
     name: "GRAPHIC DESIGN",
     path: "/image-graphic-design",
+    btnlink: "/graphic-design",
     img: graphic_design,
   },
 ];
@@ -117,7 +119,7 @@ const navigationCards = [
           title={i.name}
           imageUrl={i.path}
           img={i.img.src}
-          buttonUrl="#"
+          buttonUrl={i.btnlink}
         />
       ))
     }

@@ -24,18 +24,21 @@ const navigationCards = [
     className: "one",
     name: "WEB DESIGN",
     path: "/image-web-design-small",
+    btnlink: "/web-design",
     img: web_design_small,
   },
   {
     className: "two",
     name: "APP DESIGN",
     path: "/image-app-design",
+    btnlink: "/app-design",
     img: app_design,
   },
   {
     className: "three",
     name: "GRAPHIC DESIGN",
     path: "/image-graphic-design",
+    btnlink: "/graphic-design",
     img: graphic_design,
   },
 ] as const;
@@ -85,7 +88,7 @@ const cards = [
 <Layout>
   <Navigation />
   <HomePageHero>
-    <Button>LEARN MORE</Button>
+    <a href="/about"><Button>LEARN MORE</Button></a>
   </HomePageHero>
   <div class="navigation-cards">
     {
@@ -95,7 +98,7 @@ const cards = [
           title={i.name}
           imageUrl={i.path}
           img={i.img.src}
-          buttonUrl="#"
+          buttonUrl={i.btnlink}
         />
       ))
     }
