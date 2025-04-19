@@ -4,13 +4,12 @@ import cssVars from "../styles/css-vars";
 
 <div class="get-in-touch">
   <div class="text-content">
-    <!-- Here should be the h2 and p tags to style the desktop view -->
+    <h2>Let's talk about your project</h2>
+    <p>
+      Ready to take it to the next level? Contact us today and find out how our
+      expertise can help your business grow.
+    </p>
   </div>
-  <h2>Let's talk about your project</h2>
-  <p>
-    Ready to take it to the next level? Contact us today and find out how our
-    expertise can help your business grow.
-  </p>
   <slot />
 </div>
 
@@ -31,18 +30,34 @@ import cssVars from "../styles/css-vars";
     z-index: 10;
   }
 
-  .get-in-touch h2 {
+  .get-in-touch .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .get-in-touch .text-content h2 {
     padding-top: 64px;
     width: 65%;
   }
 
-  .get-in-touch p {
+  .get-in-touch .text-content p {
     width: 90%;
   }
 
   @media (min-width: 600px) and (max-width: 900px) {
     .get-in-touch {
       bottom: 350px;
+    }
+
+    .get-in-touch .text-content h2 {
+      width: 50%;
+    }
+
+    .get-in-touch .text-content p {
+      width: 70%;
     }
   }
 
@@ -52,6 +67,22 @@ import cssVars from "../styles/css-vars";
       width: 80%;
       height: 300px;
       bottom: 350px;
+    }
+
+    .get-in-touch .text-content {
+      justify-content: flex-start;
+      align-items: flex-start;
+      text-align: left;
+      width: 65%;
+    }
+
+    .get-in-touch .text-content h2 {
+      padding-top: 0;
+      margin-bottom: 0;
+    }
+
+    .get-in-touch .text-content p {
+      width: 60%;
     }
   }
 </style>
