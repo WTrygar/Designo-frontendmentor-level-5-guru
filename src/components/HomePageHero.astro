@@ -29,6 +29,8 @@ import cssVars from "../styles/css-vars";
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-image: url(./src/assets/shared/desktop/bg-pattern-small-circle.svg);
+    background-size: cover;
     background-color: var(--colorPeach);
     color: var(--colorWhite);
   }
@@ -37,10 +39,9 @@ import cssVars from "../styles/css-vars";
     width: 100%;
   }
 
-  .homepage-hero .hero-content h2,
-  p {
-    /* margin: auto; */
-    /* width: 70%; */
+  .homepage-hero .hero-content p {
+    margin: auto;
+    width: 70%;
   }
 
   .homepage-hero .hero-img {
@@ -68,6 +69,12 @@ import cssVars from "../styles/css-vars";
 
     .homepage-hero .hero-content {
       width: 70%;
+      height: 456px;
+    }
+
+    .homepage-hero .hero-img img {
+      position: relative;
+      top: -25px;
     }
   }
 

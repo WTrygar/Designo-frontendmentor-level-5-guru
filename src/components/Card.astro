@@ -26,7 +26,7 @@ const { class: className, title, imageUrl, img, text } = Astro.props;
   .first-card,
   .second-card,
   .third-card {
-    width: 90%;
+    width: 100%;
     height: 300px;
     margin: 10px 0;
     display: flex;
@@ -35,7 +35,7 @@ const { class: className, title, imageUrl, img, text } = Astro.props;
     align-items: center;
     border-radius: 15px;
     margin-top: 70px;
-    margin-bottom: 70px;
+    margin-bottom: 100px;
   }
 
   .first-card .card-image {
@@ -64,6 +64,12 @@ const { class: className, title, imageUrl, img, text } = Astro.props;
     flex-direction: column;
     justify-content: unset;
     align-items: center;
+  }
+
+  .first-card .card-text,
+  .second-card .card-text,
+  .third-card .card-text {
+    text-align: center;
   }
 
   @media (min-width: 600px) and (max-width: 900px) {

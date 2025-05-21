@@ -18,7 +18,14 @@ interface Props {
   buttonUrl: string;
 }
 
-const { class: className, title, imageUrl, img, buttonUrl, images } = Astro.props;
+const {
+  class: className,
+  title,
+  imageUrl,
+  img,
+  buttonUrl,
+  images,
+} = Astro.props;
 
 // const firstElementBig = images?.length > 2;
 ---
@@ -47,7 +54,8 @@ const { class: className, title, imageUrl, img, buttonUrl, images } = Astro.prop
   .one,
   .two,
   .three {
-    background-image: var(--image);
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--image);
     width: 100%;
     height: 300px;
     margin: 10px;
@@ -63,6 +71,7 @@ const { class: className, title, imageUrl, img, buttonUrl, images } = Astro.prop
   .three h3 {
     text-align: center;
     color: white;
+    font-size: 2rem;
   }
 
   .one a,
@@ -70,6 +79,7 @@ const { class: className, title, imageUrl, img, buttonUrl, images } = Astro.prop
   .three a {
     text-decoration: none;
     color: white;
+    letter-spacing: 5px;
   }
 
   @media (min-width: 600px) and (max-width: 900px) {
