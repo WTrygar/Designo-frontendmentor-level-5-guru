@@ -83,6 +83,7 @@ import cssVars from "../styles/css-vars";
       flex-direction: row;
       align-items: flex-start;
       width: 80%;
+      height: 640px;
       border-radius: 25px;
       padding-top: 50px;
 
@@ -96,6 +97,11 @@ import cssVars from "../styles/css-vars";
       padding-bottom: 20px;
     }
 
+    .homepage-hero .hero-content p {
+      margin-left: 0;
+      padding-bottom: 30px;
+    }
+
     .homepage-hero .hero-img {
       margin-bottom: -300px;
       /* margin-left: -150px; */
@@ -106,8 +112,11 @@ import cssVars from "../styles/css-vars";
     }
 
     .homepage-hero .hero-img img {
-      height: 100%;
-      width: 100%;
+      display: block;
+      max-width: fit-content;
+      max-height: fit-content;
+      height: auto;
+      min-width: auto;
       overflow-y: hidden;
       overflow-x: hidden;
     }

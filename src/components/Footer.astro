@@ -122,15 +122,17 @@ import cssVars from "../styles/css-vars";
     .footer-first-line {
       display: flex;
       justify-content: space-between;
+      align-items: baseline;
       width: 95%;
     }
 
     footer .footer-first-line .logo {
-      margin: 64px 0;
+      /* margin: 64px 0; */
     }
 
-    footer .logo img {
-      width: 202px;
+    footer .footer-first-line .logo a img {
+      margin: 0;
+      width: 180px;
     }
 
     footer .footer-links {
@@ -170,11 +172,21 @@ import cssVars from "../styles/css-vars";
     .footer-first-line {
       display: flex;
       justify-content: space-between;
-      width: 90%;
+      width: 80%;
+      padding-bottom: 80px;
+      padding-top: 220px;
     }
 
-    footer .logo {
-      margin: 64px 0;
+    footer .footer-first-line .logo {
+      margin: 0;
+    }
+
+    footer .footer-first-line .logo a {
+      text-align: left;
+    }
+
+    footer .footer-first-line .logo img {
+      margin-top: 0;
     }
 
     footer .logo img {
@@ -195,8 +207,12 @@ import cssVars from "../styles/css-vars";
     .footer-second-line {
       display: flex;
       justify-content: space-between;
-      width: 90%;
+      width: 80%;
       padding-bottom: 80px;
+    }
+
+    footer .footer-second-line .footer-text p {
+      text-align: left;
     }
 
     footer .footer-icons {
