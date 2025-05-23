@@ -26,6 +26,8 @@ const { secondary: isSecondary, tertiary: isTertiary } = Astro.props;
     align-items: center;
     text-align: center;
     background-color: var(--colorPeach);
+    background-image: url(./src/assets/shared/desktop/bg-pattern-small-circle.svg);
+    background-size: cover;
     color: var(--colorWhite);
   }
 
@@ -52,6 +54,10 @@ const { secondary: isSecondary, tertiary: isTertiary } = Astro.props;
   }
   .secondary .about-image {
     background-image: url("./src/assets/about/mobile/image-world-class-talent.jpg");
+  }
+
+  .secondary .about-text .about-header {
+    color: #ffad9b;
   }
 
   /* tertiary */
