@@ -177,17 +177,17 @@ const navigationCards = [
   @media (min-width: 900px) {
     .navigation-cards {
       width: 80%;
-      display: grid;
+      display: flex;
+      flex-direction: row;
       justify-content: normal;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 30px;
     }
 
-    .navigation-cards .one {
+    /* .navigation-cards .one {
       grid-row-start: 1;
       grid-row-end: 3;
       height: 130px;
-    }
+    } */
 
     .project-cards {
       width: 80%;
