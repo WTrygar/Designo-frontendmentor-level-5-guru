@@ -37,6 +37,7 @@ const { secondary: isSecondary, tertiary: isTertiary } = Astro.props;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 70px 0;
   }
 
   .about .about-image {
@@ -104,7 +105,7 @@ const { secondary: isSecondary, tertiary: isTertiary } = Astro.props;
     /* default */
 
     .about {
-      flex-direction: row;
+      flex-direction: row-reverse;
       justify-content: center;
       width: 80%;
       border-radius: 25px;
@@ -122,17 +123,17 @@ const { secondary: isSecondary, tertiary: isTertiary } = Astro.props;
       height: 50rem;
       min-width: 350px;
       width: 70%;
-      border-radius: 25px 0 0 25px;
+      border-radius: 0 25px 25px 0;
     }
 
     /* secondary */
     .secondary {
-      flex-direction: row-reverse;
+      flex-direction: row;
     }
 
     .secondary .about-image {
       background-image: url("./src/assets/about/desktop/image-world-class-talent.jpg");
-      border-radius: 0 25px 25px 0;
+      border-radius: 25px 0 0 25px;
     }
 
     /* tertiary */
