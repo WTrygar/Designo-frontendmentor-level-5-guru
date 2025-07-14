@@ -7,7 +7,7 @@ interface Props {
   text: string;
   imageUrl: string;
   img: string;
-}
+} 
 
 const { class: className, title, text, imageUrl, img } = Astro.props;
 ---
@@ -28,9 +28,19 @@ const { class: className, title, text, imageUrl, img } = Astro.props;
     align-items: center;
     text-align: center;
     width: 90%;
+    background-color: #fdf3f0;
     border-radius: 25px;
-    padding: 10px 0;
-    /* background-color: #ffad9b; */
+    margin: 10px 0;
+    transition: 0.3s;
+  }
+
+  .project-card:hover {
+    background-color: #e7816b;
+    color: white;
+  }
+
+  .project-card:hover .project-card-content .project-card-title {
+    color: white;
   }
 
   .project-card .project-card-image {
@@ -40,7 +50,7 @@ const { class: className, title, text, imageUrl, img } = Astro.props;
 
   .project-card .project-card-content {
     width: 100%;
-    background-color: #fdf3f0;
+
     border-radius: 0 0 25px 25px;
   }
 
