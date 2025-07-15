@@ -1,4 +1,4 @@
-# Astro Starter Kit: Basics
+# Astro Starter Kit: Basics - updated version on https://wtrygar.github.io/
 
 ```sh
 npm create astro@latest -- --template basics
