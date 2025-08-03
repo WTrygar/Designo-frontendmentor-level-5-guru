@@ -1,4 +1,4 @@
-# Astro Starter Kit: Basics - updated version on https://wtrygar.github.io/
+# Designo - frontendmentor level 5 project made with Astro - updated version on https://wtrygar.github.io/
 
 ```sh
 npm create astro@latest -- --template basics
